@@ -1,0 +1,583 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Flexy Tooltip jQuery Plugin</title>
+    <script src="js/jquery.js" type="text/javascript"></script>
+    <script src="js/jquery-ui-1.8.18.custom.min.js" type="text/javascript"></script>
+    <script src="js/jquery.flexytooltip.js" type="text/javascript"></script>
+    <link href="css/black-tie/jquery-ui-1.8.18.custom.css" rel="stylesheet" type="text/css" />
+    <link href="css/overall.css" rel="stylesheet" type="text/css" />
+    <link href="css/flexytooltip.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<center>
+    <div style="width:80%;padding:20px 0;text-align:justify"><img src="images/logo.png" alt="Flexy Tooltip Logo" /></div>
+    <div id="tabs" style="width:80%">
+	    <ul>
+		    <li><a href="#tabs-1">Introduction</a></li>
+		    <li><a href="#tabs-2">API Refrence</a></li>
+		    <li><a href="#tabs-3">Important Notices</a></li>
+            <li><a href="#tabs-4">Examples</a></li>
+	    </ul>
+	    <div id="tabs-1" style="padding:30px;text-align:justify">
+            <span class="header">Quick Demo</span><hr />
+            Hover your mouse cursor on following image and see what occurs :
+            <br /><br />
+            <center>
+                <img id="img1" src="images/cat.jpg" alt="" style="border:solid 1px black;" />
+            </center>
+            <br /><br />
+            <span class="header">What's Flexy Tooltip</span><hr />
+            Flexy Tooltip is a powerfull,funny and flexible jQuery plugin that makes your pages and page elements more interesting with importing some contents in the tooltip of them.
+            it's also so easy to use and gives properties to handling what you exactly want.
+            <br />some of them is :
+            <ul style="list-style-image:url('images/check.png')">
+                <li>Content of tooltip : The content of tooltip may be plain text or html code.</li>
+                <li>Mode of tooltip : When tooltip does its work,when mouse hovers an element or when focus occures on element or both.</li>
+                <li>Effects of tooltip : How tooltip appears or disappears and how much should has speed.</li>
+                <li>Position of tooltip : Tooltip must places a fixed position or not and also specifying where it must to be.</li>
+                <li>Making delays : Making delays before appearing or disappearing of tooltip.</li>
+                <li>Making flashes : Making flashes with appearing or disappearing of tooltip and also specifying color,count and interval of flashes.</li>
+                <li>Firing of events : You may want to do some functions before or after of appearing,before or after of disappearing and after flashing of appearing or disappearing done.</li>
+            </ul>
+            <br /><br />
+            <span class="header">How To Use</span><hr />
+            Using The Flexy Tooltip is as simple as 3 following steps :<br />
+            <blockquote>
+            <span style="font-family:tabsFont;font-size:16px;color:#447FCF">Step #1 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="font-family:tahoma;">Refrence the scripts to your page :</span></span> 
+            <br /><br /><center><div class="codeBox">
+            <span class="elem">&lt;script</span>&nbsp;<span class="attrName">src=</span><span class="attrVal">"js/jquery.js"</span>
+            <span class="attrName">type=</span><span class="attrVal">"text/javascript"</span><span class="elem">&gt;&lt;/script&gt;</span>
+            <br />
+            <span class="elem">&lt;script</span>&nbsp;<span class="attrName">src=</span><span class="attrVal">"js/jquery.flexytooltip.js"</span>
+            <span class="attrName">type=</span><span class="attrVal">"text/javascript"</span><span class="elem">&gt;&lt;/script&gt;</span>
+            </div></center>
+            
+            <br /><br /><span style="font-family:tabsFont;font-size:16px;color:#447FCF">Step #2 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="font-family:tahoma;">Link your page to css file :</span></span>
+
+            <br /><br /><center><div class="codeBox">
+            <span class="elem">&lt;link</span>&nbsp;<span class="attrName">href=</span><span class="attrVal">"css/flexytooltip.css"</span>
+            <span class="attrName">rel=</span><span class="attrVal">"stylesheet"</span>
+            &nbsp;<span class="attrName">type=</span><span class="attrVal">"text/css"</span>&nbsp;<span class="elem"> /&gt;</span>
+            </div></center>
+
+               
+            <br /><br /><span style="font-family:tabsFont;font-size:16px;color:#447FCF">Step #3 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="font-family:tahoma;">Fire tooltip method for every element you want :</span></span>
+            <br /><br /><center><div class="codeBox">
+            <span class="elem">&lt;script</span>&nbsp;<span class="attrName">type=</span><span class="attrVal">"text/javascript"</span><span class="elem">&gt;</span>
+            <blockquote><span class="jsCode">$(<span class="attrVal">document</span>).ready(function () {</span>
+            <blockquote><span class="jsCode">$(<span class="attrVal">'#img1'</span>).tooltip(<span class="attrVal">'Your Content'</span>);</span></blockquote><span class="jsCode">});</span></blockquote>
+            <span class="elem">&lt;/script</span><span class="elem">&gt;</span>
+            </div></center>
+
+            </blockquote>
+	    </div>
+	    <div id="tabs-2" style="padding:30px;text-align:justify">
+            <span class="header">Method Signature</span><hr />
+            This is the main signature for calling Flexy Tooltip :
+            <br /><br />
+            <center><div class="codeBox">
+               <span class="elem"><i>jQuery</i></span><span class="jsCode">&nbsp;&nbsp; tooltip(</span><span class="elem"><i>string||number||element||jQuery</i></span> <span class="attrVal">content</span><span class="jsCode"> ,</span> <span class="elem"><i>object</i></span> <span class="attrVal">options</span><span class="jsCode">)</span>
+            </div></center><br />
+            This means :
+            <ul style="list-style-image:url('images/check.png')">
+                <li>This method returns jQuery object.</li>
+                <li>First argument is the content that you want to show in tooltip and can be string,number,element or jQuery data types.</li>
+                <li>Second argument is an object for configuring tooltip and below is list of properties for this object : </li>
+            </ul>
+            <br /><br />
+            <span class="header">Mode of tooltip</span><hr />
+            <br /><center>
+            <table class="apiRef" style="width:85%;margin:auto 6.75pt;border-collapse:collapse;font-family:Tahoma" border="1" cellspacing="5" cellpadding="10" align="center">
+            <tbody>
+            <tr class="myHead" align="center" style="color:White">
+                <td style="width: 10%;height:50px;border:windowtext 1pt solid;">
+                    <b>Property</b>
+                </td>
+                <td style="width: 78%;border:windowtext 1pt solid;">
+                    <b>Description</b>
+                </td>
+                <td style="width: 12%;border:windowtext 1pt solid;">
+                    <b>Default Value</b>
+                </td>
+            </tr>
+            <tr class="myTr" align="center">
+                <td style="height:50px;border:windowtext 1pt solid;">
+                    mouseMode
+                </td>
+                <td style="border:windowtext 1pt solid;text-align:justify">
+                    Set true if tooltip must be always beside of mouse cursor,otherwise false.
+                </td>
+                <td style="border:windowtext 1pt solid;">
+                    true
+                </td>
+            </tr>
+            <tr class="myAltTr" align="center">
+                <td style="height:50px;border:windowtext 1pt solid;">
+                    focusMode
+                </td>
+                <td style="border:windowtext 1pt solid;text-align:justify">
+                    Set true if tooltip appears when element is focused and disappear when element is blured,otherwise false.
+                </td>
+                <td style="border:windowtext 1pt solid;">
+                    false
+                </td>
+            </tr>
+            </tbody>
+        </table>
+            </center>
+            <br /><br />
+            <span class="header">Effects of tooltip</span><hr />
+            <br /><center>
+            <table class="apiRef" style="width:85%;margin:auto 6.75pt;border-collapse:collapse;font-family:Tahoma" border="1" cellspacing="5" cellpadding="10" align="center">
+            <tbody>
+            <tr class="myHead" align="center" style="color:White">
+                <td style="width: 10%;height:50px;border:windowtext 1pt solid;">
+                    <b>Property</b>
+                </td>
+                <td style="width: 78%;border:windowtext 1pt solid;">
+                    <b>Description</b>
+                </td>
+                <td style="width: 12%;border:windowtext 1pt solid;">
+                    <b>Default Value</b>
+                </td>
+            </tr>
+            <tr class="myTr" align="center">
+                <td style="height:50px;border:windowtext 1pt solid;">
+                    appearEffect
+                </td>
+                <td style="border:windowtext 1pt solid;text-align:justify">
+                    The effect of appearing.it can be 'fade','slide','show' or 'none'.
+                </td>
+                <td style="border:windowtext 1pt solid;">
+                    'fade'
+                </td>
+            </tr>
+            <tr class="myAltTr" align="center">
+                <td style="height:50px;border:windowtext 1pt solid;">
+                    appearSpeed
+                </td>
+                <td style="border:windowtext 1pt solid;text-align:justify">
+                    The effect speed of appearing.it can be 'slow','normal','fast' or a number in millisecond unit.
+                </td>
+                <td style="border:windowtext 1pt solid;">
+                    'normal'
+                </td>
+            </tr>
+            <tr class="myTr" align="center">
+                <td style="height:50px;border:windowtext 1pt solid;">
+                    disappearEffect
+                </td>
+                <td style="border:windowtext 1pt solid;text-align:justify">
+                    The effect of disappearing.it can be 'fade','slide','show' or 'none'.
+                </td>
+                <td style="border:windowtext 1pt solid;">
+                    'fade'
+                </td>
+            </tr>
+            <tr class="myAltTr" align="center">
+                <td style="height:50px;border:windowtext 1pt solid;">
+                    disappearSpeed
+                </td>
+                <td style="border:windowtext 1pt solid;text-align:justify">
+                    The effect speed of disappearing.it can be 'slow','normal','fast' or a number in millisecond unit.
+                </td>
+                <td style="border:windowtext 1pt solid;">
+                    'normal'
+                </td>
+            </tr>
+
+            </tbody>
+            </table>
+            </center>
+            <br /><br />
+            <br /><br />
+            <span class="header">Tooltip opacity</span><hr />
+            <br /><center>
+            <table class="apiRef" style="width:85%;margin:auto 6.75pt;border-collapse:collapse;font-family:Tahoma" border="1" cellspacing="5" cellpadding="10" align="center">
+            <tbody>
+            <tr class="myHead" align="center" style="color:White">
+                <td style="width: 10%;height:50px;border:windowtext 1pt solid;">
+                    <b>Property</b>
+                </td>
+                <td style="width: 78%;border:windowtext 1pt solid;">
+                    <b>Description</b>
+                </td>
+                <td style="width: 12%;border:windowtext 1pt solid;">
+                    <b>Default Value</b>
+                </td>
+            </tr>
+            <tr class="myTr" align="center">
+                <td style="height:50px;border:windowtext 1pt solid;">
+                    opacity
+                </td>
+                <td style="border:windowtext 1pt solid;text-align:justify">
+                    Set a number between 0 and 1 for tooltip opacity. 
+                </td>
+                <td style="border:windowtext 1pt solid;">
+                    0.8
+                </td>
+            </tr>
+            </tbody>
+            </table>
+            </center>
+            <br /><br />
+            <span class="header">Position of tooltip</span><hr />
+            <br /><center>
+            <table class="apiRef" style="width:85%;margin:auto 6.75pt;border-collapse:collapse;font-family:Tahoma" border="1" cellspacing="5" cellpadding="10" align="center">
+            <tbody>
+            <tr class="myHead" align="center" style="color:White">
+                <td style="width: 10%;height:50px;border:windowtext 1pt solid;">
+                    <b>Property</b>
+                </td>
+                <td style="width: 78%;border:windowtext 1pt solid;">
+                    <b>Description</b>
+                </td>
+                <td style="width: 12%;border:windowtext 1pt solid;">
+                    <b>Default Value</b>
+                </td>
+            </tr>
+            <tr class="myTr" align="center">
+                <td style="height:50px;border:windowtext 1pt solid;">
+                    positionIsFixed
+                </td>
+                <td style="border:windowtext 1pt solid;text-align:justify">
+                    Set true if you want fixed tooltip,otherwise false.
+                </td>
+                <td style="border:windowtext 1pt solid;">
+                    false
+                </td>
+            </tr>
+            <tr class="myAltTr" align="center">
+                <td style="height:50px;border:windowtext 1pt solid;">
+                    position
+                </td>
+                <td style="border:windowtext 1pt solid;text-align:justify">
+                    An array for specifying position of tooltip.first index is for top offset and second is for left offset.
+                </td>
+                <td style="border:windowtext 1pt solid;">
+                    [10,10]
+                </td>
+            </tr>
+            </tbody>
+            </table>
+            </center>
+            <br /><br />
+            <span class="header">Making delays</span><hr />
+            <br /><center>
+            <table class="apiRef" style="width:85%;margin:auto 6.75pt;border-collapse:collapse;font-family:Tahoma" border="1" cellspacing="5" cellpadding="10" align="center">
+            <tbody>
+            <tr class="myHead" align="center" style="color:White">
+                <td style="width: 10%;height:50px;border:windowtext 1pt solid;">
+                    <b>Property</b>
+                </td>
+                <td style="width: 78%;border:windowtext 1pt solid;">
+                    <b>Description</b>
+                </td>
+                <td style="width: 12%;border:windowtext 1pt solid;">
+                    <b>Default Value</b>
+                </td>
+            </tr>
+            <tr class="myTr" align="center">
+                <td style="height:50px;border:windowtext 1pt solid;">
+                    appearDelay
+                </td>
+                <td style="border:windowtext 1pt solid;text-align:justify">
+                    Set a number in millisecond unit for delay before apperaing. 
+                </td>
+                <td style="border:windowtext 1pt solid;">
+                    0
+                </td>
+            </tr>
+            <tr class="myAltTr" align="center">
+                <td style="height:50px;border:windowtext 1pt solid;">
+                     disappearDelay
+                </td>
+                <td style="border:windowtext 1pt solid;text-align:justify">
+                    Set a number in millisecond unit for delay before disapperaing.
+                </td>
+                <td style="border:windowtext 1pt solid;">
+                    0
+                </td>
+            </tr>
+            </tbody>
+            </table>
+            </center>
+            <br /><br />
+            <span class="header">Making flashes</span><hr />
+            <br /><center>
+            <table class="apiRef" style="width:85%;margin:auto 6.75pt;border-collapse:collapse;font-family:Tahoma" border="1" cellspacing="5" cellpadding="10" align="center">
+            <tbody>
+            <tr class="myHead" align="center" style="color:White">
+                <td style="width: 10%;height:50px;border:windowtext 1pt solid;">
+                    <b>Property</b>
+                </td>
+                <td style="width: 78%;border:windowtext 1pt solid;">
+                    <b>Description</b>
+                </td>
+                <td style="width: 12%;border:windowtext 1pt solid;">
+                    <b>Default Value</b>
+                </td>
+            </tr>
+            <tr class="myTr" align="center">
+                <td style="height:50px;border:windowtext 1pt solid;">
+                    appearFlash
+                </td>
+                <td style="border:windowtext 1pt solid;text-align:justify">
+                    Set true if you want tooltip appears with flashing,otherwise false. 
+                </td>
+                <td style="border:windowtext 1pt solid;">
+                    true
+                </td>
+            </tr>
+            <tr class="myAltTr" align="center">
+                <td style="height:50px;border:windowtext 1pt solid;">
+                     appearFlashColor
+                </td>
+                <td style="border:windowtext 1pt solid;text-align:justify">
+                    Set the color of flashing.it can be any valid css color.
+                </td>
+                <td style="border:windowtext 1pt solid;">
+                    'White'
+                </td>
+            </tr>
+            <tr class="myTr" align="center">
+                <td style="height:50px;border:windowtext 1pt solid;">
+                    appearFlashInterval
+                </td>
+                <td style="border:windowtext 1pt solid;text-align:justify">
+                    Set a number in millisecond unit to specifying how much long every flash. 
+                </td>
+                <td style="border:windowtext 1pt solid;">
+                    100
+                </td>
+            </tr>
+            <tr class="myAltTr" align="center">
+                <td style="height:50px;border:windowtext 1pt solid;">
+                     appearFlashCount
+                </td>
+                <td style="border:windowtext 1pt solid;text-align:justify">
+                    Set a number for specifying count of flash(es).
+                </td>
+                <td style="border:windowtext 1pt solid;">
+                    2
+                </td>
+            </tr>
+            <tr class="myTr" align="center">
+                <td style="height:50px;border:windowtext 1pt solid;">
+                    disappearFlash
+                </td>
+                <td style="border:windowtext 1pt solid;text-align:justify">
+                    Set true if you want tooltip disappears with flashing,otherwise false. 
+                </td>
+                <td style="border:windowtext 1pt solid;">
+                    true
+                </td>
+            </tr>
+            <tr class="myAltTr" align="center">
+                <td style="height:50px;border:windowtext 1pt solid;">
+                     disappearFlashColor
+                </td>
+                <td style="border:windowtext 1pt solid;text-align:justify">
+                    Set the color of flashing.it can be any valid css color.
+                </td>
+                <td style="border:windowtext 1pt solid;">
+                    'White'
+                </td>
+            </tr>
+            <tr class="myTr" align="center">
+                <td style="height:50px;border:windowtext 1pt solid;">
+                    disappearFlashInterval
+                </td>
+                <td style="border:windowtext 1pt solid;text-align:justify">
+                    Set a number in millisecond unit to specifying how much long every flash. 
+                </td>
+                <td style="border:windowtext 1pt solid;">
+                    100
+                </td>
+            </tr>
+            <tr class="myAltTr" align="center">
+                <td style="height:50px;border:windowtext 1pt solid;">
+                     disappearFlashCount
+                </td>
+                <td style="border:windowtext 1pt solid;text-align:justify">
+                    Set a number for specifying count of flash(es).
+                </td>
+                <td style="border:windowtext 1pt solid;">
+                    2
+                </td>
+            </tr>
+            </tbody>
+            </table>
+            </center>
+            <br /><br />
+            <span class="header">Firing of events</span><hr />
+            <br /><center>
+            <table class="apiRef" style="width:85%;margin:auto 6.75pt;border-collapse:collapse;font-family:Tahoma" border="1" cellspacing="5" cellpadding="10" align="center">
+            <tbody>
+            <tr class="myHead" align="center" style="color:White">
+                <td style="width: 10%;height:50px;border:windowtext 1pt solid;">
+                    <b>Property</b>
+                </td>
+                <td style="width: 78%;border:windowtext 1pt solid;">
+                    <b>Description</b>
+                </td>
+                <td style="width: 12%;border:windowtext 1pt solid;">
+                    <b>Default Value</b>
+                </td>
+            </tr>
+            <tr class="myTr" align="center">
+                <td style="height:50px;border:windowtext 1pt solid;">
+                    beforeAppear
+                </td>
+                <td style="border:windowtext 1pt solid;text-align:justify">
+                    Set this to a function(handler) if you want to do some works before appearing starts.
+                </td>
+                <td style="border:windowtext 1pt solid;">
+                    function () { }
+                </td>
+            </tr>
+            <tr class="myAltTr" align="center">
+                <td style="height:50px;border:windowtext 1pt solid;">
+                    appearFlashCompleted
+                </td>
+                <td style="border:windowtext 1pt solid;text-align:justify">
+                    Set this to a function(handler) if you want to do some works when flashing of appearing completed.
+                </td>
+                <td style="border:windowtext 1pt solid;">
+                    function () { }
+                </td>
+            </tr>
+            <tr class="myTr" align="center">
+                <td style="height:50px;border:windowtext 1pt solid;">
+                    appearCompleted
+                </td>
+                <td style="border:windowtext 1pt solid;text-align:justify">
+                    Set this to a function(handler) if you want to do some works when appearing completed.
+                </td>
+                <td style="border:windowtext 1pt solid;">
+                    function () { }
+                </td>
+            </tr>
+            <tr class="myAltTr" align="center">
+                <td style="height:50px;border:windowtext 1pt solid;">
+                    beforeDisappear
+                </td>
+                <td style="border:windowtext 1pt solid;text-align:justify">
+                    Set this to a function(handler) if you want to do some works before disappearing starts.
+                </td>
+                <td style="border:windowtext 1pt solid;">
+                    function () { }
+                </td>
+            </tr>
+            <tr class="myTr" align="center">
+                <td style="height:50px;border:windowtext 1pt solid;">
+                    disappearFlashCompleted
+                </td>
+                <td style="border:windowtext 1pt solid;text-align:justify">
+                    Set this to a function(handler) if you want to do some works when flashing of disappearing completed.
+                </td>
+                <td style="border:windowtext 1pt solid;">
+                    function () { }
+                </td>
+            </tr>
+            <tr class="myAltTr" align="center">
+                <td style="height:50px;border:windowtext 1pt solid;">
+                    disappearCompleted
+                </td>
+                <td style="border:windowtext 1pt solid;text-align:justify">
+                    Set this to a function(handler) if you want to do some works when disappearing completed.
+                </td>
+                <td style="border:windowtext 1pt solid;">
+                    function () { }
+                </td>
+            </tr>
+
+            </tbody>
+            </table>
+            </center>
+            <br /><br />
+	    </div>
+	    <div id="tabs-3" style="padding:30px;text-align:justify">
+            There is some notices that you must to know :
+            <br /><br />
+            <ul style="list-style-image:url('images/check.png')">
+                <li>If <span style="color:Orange">positionIsFixed = false</span>,the position of tooltip that is defined with <span style="color:Orange">position</span> property,is relative to position of mouse
+                cursor and if <span style="color:Orange">positionIsFixed = true</span>,the position of tooltip is relative to position of caller element.
+                </li>
+                <li><span style="color:Orange">position</span> property can be positive or negative values for its first or second index.</li>
+                <li>If <span style="color:Orange">focusMode = true</span>,position of tooltip is always fixed although you set <span style="color:Orange">positionIsFixed = false</span>.</li>
+                <li>If <span style="color:Orange">disappearSpeed</span> &lt; <span style="color:Orange">disappearFlashCount</span> * <span style="color:Orange">disappearFlashInterval</span>,means time of flashing
+                of disapperaing is longer than time of disappering and it's unappealing.so in this case <span style="color:Orange">disappearFlashCount</span> is kept its value but 
+                <span style="color:Orange">disappearFlashInterval</span> is changed automatically so that flashing and disappearing complete together.</li>
+                <li>CSS Styles can be apply or change to tooltip by editing 'flexytooltip.css' file.</li>
+            </ul>
+            <br /><br />
+	    </div>
+        <div id="tabs-4" style="padding:30px;text-align:justify">
+            <span class="header">Contents</span><hr />
+            <a href="examples/content-1.htm">
+            <span style="font-family:tabsFont;font-size:16px;color:#447FCF">Example #1 &nbsp;&nbsp; <span style="font-family:tahoma;">HTML content in the tooltip</span></span>
+            </a>
+            <br />
+            <a href="examples/content-2.htm">
+            <span style="font-family:tabsFont;font-size:16px;color:#447FCF">Example #2 &nbsp;&nbsp; <span style="font-family:tahoma;">jQuery content in the tooltip</span></span>
+            </a>
+            <br /><br /><br />
+            <span class="header">Mode of tooltip</span><hr />
+            <a href="examples/mode.htm">
+            <span style="font-family:tabsFont;font-size:16px;color:#447FCF">Example #3 &nbsp;&nbsp; <span style="font-family:tahoma;">Mouse mode and focus mode of tooltip</span></span>
+            </a>
+            <br /><br /><br />
+            <span class="header">Effects of tooltip</span><hr />
+            <a href="examples/effects.htm">
+            <span style="font-family:tabsFont;font-size:16px;color:#447FCF">Example #4 &nbsp;&nbsp; <span style="font-family:tahoma;">Different effects and different speeds</span></span>
+            </a>
+            <br /><br /><br />
+            <span class="header">Tooltip opacity</span><hr />
+            <a href="examples/opacity.htm">
+            <span style="font-family:tabsFont;font-size:16px;color:#447FCF">Example #5 &nbsp;&nbsp; <span style="font-family:tahoma;">Change opacity of tooltip</span></span>
+            </a>
+            <br /><br /><br />
+            <span class="header">Position of tooltip</span><hr />
+            <a href="examples/position.htm">
+            <span style="font-family:tabsFont;font-size:16px;color:#447FCF">Example #6 &nbsp;&nbsp; <span style="font-family:tahoma;">Change position of tooltip</span></span>
+            </a>
+            <br /><br /><br />
+            <span class="header">Making delays</span><hr />
+            <a href="examples/delays.htm">
+            <span style="font-family:tabsFont;font-size:16px;color:#447FCF">Example #7 &nbsp;&nbsp; <span style="font-family:tahoma;">Set delays before appearing or disappearing</span></span>
+            </a>
+            <br /><br /><br />
+            <span class="header">Making flashes</span><hr />
+            <a href="examples/flashes.htm">
+            <span style="font-family:tabsFont;font-size:16px;color:#447FCF">Example #8 &nbsp;&nbsp; <span style="font-family:tahoma;">Change flashing behaviour for appearing or disappearing</span></span>
+            </a>
+            <br /><br /><br />
+            <span class="header">Firing of events</span><hr />
+            <a href="examples/events.htm">
+            <span style="font-family:tabsFont;font-size:16px;color:#447FCF">Example #9 &nbsp;&nbsp; <span style="font-family:tahoma;">Calling of events</span></span>
+            </a>
+            <br /><br /><br />
+	    </div>
+    </div><br /><br />
+</center>
+    <script type="text/javascript">
+
+        $(document).ready(function () {
+            $("#tabs").tabs();
+            $('#img1').tooltip('Woooow,What So Funny.<br /><br /><img src="images/big-cat.jpg" style="border:solid 1px black;" /><br /><br />');
+            var oldColor;
+            $('table.apiRef tr:not(.myHead)').hover(function () {
+                oldColor = $(this).css('backgroundColor')
+                $(this).css({ backgroundColor: '#5bc966' });
+            },
+              function () {
+                  $(this).css({ backgroundColor: oldColor });
+              });
+        });
+       
+	</script>
+</body>
+</html>
