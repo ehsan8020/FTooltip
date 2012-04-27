@@ -1,0 +1,95 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Flexy Tooltip jQuery Plugin</title>
+    <script src="../js/jquery.js" type="text/javascript"></script>
+    <script src="../js/jquery.flexytooltip.js" type="text/javascript"></script>
+    <link href="../css/flexytooltip.css" rel="stylesheet" type="text/css" />
+    <link href="../css/overall.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+
+    <center>
+    <div style="width:80%;padding:20px 0px;text-align:justify"><img src="../images/logo.png" alt="Flexy Tooltip Logo" /></div>
+    <div class="exampleDiv">
+        <a href="../index.htm#tabs-4"><img src="../images/back.png" style="vertical-align:middle" /><span style="font-family:headerFont;font-size:16px;color:Purple">Back to examples</span></a><br /><br />
+        <span style="font-family:tabsFont;font-size:26px;color:#447FCF">Example #9 &nbsp;&nbsp; Calling of events</span><br /><br />
+        <span class="header">Demo</span><hr />
+        <br /><center>
+            <img id="exam" src="../images/penguins.jpg" alt="" style="border:solid 1px black" />
+            <br /><br />
+            Hover mouse on element and see : <div id="result" style="width:400px;background-color:#a0a0a0;font-size:large;padding:20px;border:solid 2px #505050;border-radius:10px"></div>
+            
+        </center>
+        <br /><br />
+        <span class="header">Code</span><hr />
+        <br /><center><div class="codeBox">
+        <span class="elem">&lt;script</span>&nbsp;<span class="attrName">type=</span><span class="attrVal">"text/javascript"</span><span class="elem">&gt;</span>
+        
+        <pre class="elem" style="font-family:Tahoma;font-size:15px">
+        function show(stat) {
+            switch (stat) {
+                case 1: $('#result').text('"beforeAppear" event was fired.');
+                    $('#result').css('backgroundColor', '#ffb8b8');
+                    break;
+                case 2: $('#result').text('"appearFlashCompleted" event was fired.');
+                    $('#result').css('backgroundColor', '#bfffc5');
+                    break;
+                case 3: $('#result').text('"appearCompleted" event was fired.');
+                    $('#result').css('backgroundColor', '#fabfff');
+                    break;
+                case 4: $('#result').text('"beforeDisappear" event was fired.');
+                    $('#result').css('backgroundColor', '#ffc97c');
+                    break;
+                case 5: $('#result').text('"disappearFlashCompleted" event was fired.');
+                    $('#result').css('backgroundColor', '#bff7ff');
+                    break;
+                case 6: $('#result').text('"disappearCompleted" event was fired.');
+                    $('#result').css('backgroundColor', '#f7ffbf');
+                    break;
+            }
+        }
+        </pre>
+        <blockquote>
+        <span class="jsCode">$(<span class="attrVal">'#exam'</span>).tooltip(
+        <span class="attrVal">
+        'Three beautiful Penguins'
+        <span class="jsCode"> ,</span> { appearSpeed: 4000, appearFlashInterval: 4000, disappearSpeed: 10000, disappearFlashInterval: 2500, beforeAppear: function () { show(1); }, appearFlashCompleted: function () { show(2); }, appearCompleted: function () { show(3); }, beforeDisappear: function () { show(4); }, disappearFlashCompleted: function () { show(5); }, disappearCompleted: function () { show(6); } }
+        </span>);</span>
+        </blockquote>
+        <span class="elem">&lt;/script</span><span class="elem">&gt;</span>
+        </div></center>
+        <br /><br />
+    </div>
+    </center>
+
+    <script type="text/javascript">
+        function show(stat) {
+            switch (stat) {
+                case 1: $('#result').text('"beforeAppear" event was fired.');
+                    $('#result').css('backgroundColor', '#ffb8b8');
+                    break;
+                case 2: $('#result').text('"appearFlashCompleted" event was fired.');
+                    $('#result').css('backgroundColor', '#bfffc5');
+                    break;
+                case 3: $('#result').text('"appearCompleted" event was fired.');
+                    $('#result').css('backgroundColor', '#fabfff');
+                    break;
+                case 4: $('#result').text('"beforeDisappear" event was fired.');
+                    $('#result').css('backgroundColor', '#ffc97c');
+                    break;
+                case 5: $('#result').text('"disappearFlashCompleted" event was fired.');
+                    $('#result').css('backgroundColor', '#bff7ff');
+                    break;
+                case 6: $('#result').text('"disappearCompleted" event was fired.');
+                    $('#result').css('backgroundColor', '#f7ffbf');
+                    break;
+            }
+        }
+
+        $('#exam').tooltip('Three beautiful Penguins', { appearSpeed: 4000, appearFlashInterval: 4000, disappearSpeed: 10000, disappearFlashInterval: 2500, beforeAppear: function () { show(1); }, appearFlashCompleted: function () { show(2); }, appearCompleted: function () { show(3); }, beforeDisappear: function () { show(4); }, disappearFlashCompleted: function () { show(5); }, disappearCompleted: function () { show(6); } });
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,90 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Flexy Tooltip jQuery Plugin</title>
+    <script src="../js/jquery.js" type="text/javascript"></script>
+    <script src="../js/jquery.flexytooltip.js" type="text/javascript"></script>
+    <link href="../css/flexytooltip.css" rel="stylesheet" type="text/css" />
+    <link href="../css/overall.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+
+    <center>
+    <div style="width:80%;padding:20px 0px;text-align:justify"><img src="../images/logo.png" alt="Flexy Tooltip Logo" /></div>
+    <div class="exampleDiv">
+        <a href="../index.htm#tabs-4"><img src="../images/back.png" style="vertical-align:middle" /><span style="font-family:headerFont;font-size:16px;color:Purple">Back to examples</span></a><br /><br />
+        <span style="font-family:tabsFont;font-size:26px;color:#447FCF">Example #3 &nbsp;&nbsp; Mouse mode and focus mode of tooltip</span><br /><br />
+        <span class="header">Demo</span><hr />
+        <br /><center>
+        
+        <table cellpadding="5" cellspacing="5" style="background-color:#9a9a9a;border:solid 2px black;border-radius:5px;padding:20px"> 
+            <tr>
+                <td align="right">Username : </td>
+                <td align="left"><input id="us" type="text" /></td>
+            </tr>
+            <tr>
+                <td align="right">Password : </td>
+                <td align="left"><input id="pass" type="text" /> </td>
+            </tr>
+            <tr>
+                <td align="right">Gender : </td>
+                <td align="left"><select id="gender"><option value="male">Male</option><option value="female">Female</option></select></td>
+            </tr>
+            <tr>
+                <td colspan="2" align="left"><input id="agree" type="checkbox" />I accept agreement.</td>
+            </tr>
+            <tr>
+                <td colspan="2" align="center"><input id="submit" type="submit" value="Send Request" /></td>
+            </tr>
+        </table>
+
+
+
+        </center>
+        <br /><br />
+        <span class="header">Code</span><hr />
+        <br /><center><div class="codeBox">
+        <span class="elem">&lt;script</span>&nbsp;<span class="attrName">type=</span><span class="attrVal">"text/javascript"</span><span class="elem">&gt;</span>
+        <blockquote>
+        <span class="jsCode">$(<span class="attrVal">'#us'</span>).tooltip(
+        <span class="attrVal">
+        'Enter your username here'<span class="jsCode"> ,</span> { focusMode: true, mouseMode: false, position: [-13, 170] }
+        </span>);</span>
+        <br />
+        <span class="jsCode">$(<span class="attrVal">'#pass'</span>).tooltip(
+        <span class="attrVal">
+        'Enter your password here'<span class="jsCode"> ,</span> { focusMode: true, mouseMode: false, position: [-13, 170] }
+        </span>);</span>
+        <br />
+        <span class="jsCode">$(<span class="attrVal">'#gender'</span>).tooltip(
+        <span class="attrVal">
+        'Select your sex'<span class="jsCode"> ,</span> { focusMode: true, mouseMode: false, position: [-13, 170] }
+        </span>);</span>
+        <br />
+        <span class="jsCode">$(<span class="attrVal">'#agree'</span>).tooltip(
+        <span class="attrVal">
+        'Read the agreement and check this box'<span class="jsCode"> ,</span> { focusMode: true, mouseMode: false, position: [-13, 247] }
+        </span>);</span>
+        <br />
+        <span class="jsCode">$(<span class="attrVal">'#submit'</span>).tooltip(
+        <span class="attrVal">
+        'Fill the form and click this'<span class="jsCode"> ,</span> { focusMode: true, position: [-13, 190] }
+        </span>);</span>
+        </blockquote>
+        <span class="elem">&lt;/script</span><span class="elem">&gt;</span>
+        </div></center>
+        <br /><br />
+    </div>
+    </center>
+
+    <script type="text/javascript">
+        $('#us').tooltip('Enter your username here', { focusMode: true, mouseMode: false, position: [-13, 170] });
+        $('#pass').tooltip('Enter your password here', { focusMode: true, mouseMode: false, position: [-13, 170] });
+        $('#gender').tooltip('Select your sex', { focusMode: true, mouseMode: false, position: [-13, 170] });
+        $('#agree').tooltip('Read the agreement and check this box', { focusMode: true, mouseMode: false, position: [-13, 247] });
+        $('#submit').tooltip('Fill the form and click this', { focusMode: true, position: [-13, 190] });
+    </script>
+
+</body>
+</html>
